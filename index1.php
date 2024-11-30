@@ -83,3 +83,11 @@ if (!isset($result['results']) || !is_array($result['results'])) {
                     <td><?php echo htmlspecialchars($record['colleges']); ?></td>
                     <td><?php echo htmlspecialchars($record['number_of_students']); ?></td>
                 </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>
