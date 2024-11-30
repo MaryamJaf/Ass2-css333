@@ -17,3 +17,12 @@ if (!isset($result['results']) || !is_array($result['results'])) {
     die('Error: No valid data found in the response.');
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Enrollment Data</title>
+    <!-- Link to Pico CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/pico.css">
+    <style>
