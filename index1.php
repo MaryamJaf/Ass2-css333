@@ -26,3 +26,60 @@ if (!isset($result['results']) || !is_array($result['results'])) {
     <!-- Link to Pico CSS -->
     <link rel="stylesheet" href="https://unpkg.com/pico.css">
     <style>
+ /* Additional styling for table responsiveness and overflow handling */
+ table {
+            width: 100%;
+            border-collapse: collapse; /* For removing double borders */
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left; /* Align text to the left for better readability */
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .table-wrapper {
+            max-width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 20px;
+        }
+        /* Adding alternate row colors for readability */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<main class="container">
+    <h2>Students Enrollment Data</h2>
+
+    <!-- Table wrapper for better overflow handling -->
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Semester</th>
+                    <th>The Programs</th>
+                    <th>Nationality</th>
+                    <th>Colleges</th>
+                    <th>Number of Students</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($result['results'] as $record): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($record['year']); ?></td>
+                    <td><?php echo htmlspecialchars($record['semester']); ?></td>
+                    <td><?php echo htmlspecialchars($record['the_programs']); ?></td>
+                    <td><?php echo htmlspecialchars($record['nationality']); ?></td>
+                    <td><?php echo htmlspecialchars($record['colleges']); ?></td>
+                    <td><?php echo htmlspecialchars($record['number_of_students']); ?></td>
+                </tr>
