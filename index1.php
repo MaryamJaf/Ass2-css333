@@ -12,3 +12,8 @@ $result = json_decode($response, true);
 if (json_last_error() !== JSON_ERROR_NONE) {
     die('Error decoding JSON: ' . json_last_error_msg());
 }
+// Check if 'results' key exists in the decoded data
+if (!isset($result['results']) || !is_array($result['results'])) {
+    die('Error: No valid data found in the response.');
+}
+?>
